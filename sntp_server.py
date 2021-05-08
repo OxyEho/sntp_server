@@ -54,7 +54,10 @@ def main(delta: int):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-d', type=int, default=0, dest='delta')
-    args = parser.parse_args()
-    main(args.delta)
+    try:
+        parser = argparse.ArgumentParser()
+        parser.add_argument('-d', type=int, default=0, dest='delta')
+        args = parser.parse_args()
+        main(args.delta)
+    except KeyboardInterrupt:
+        exit(0)
